@@ -23,9 +23,10 @@ This is a fictional company and a case study presented by Google so we will assu
 
 ## Process
 ### ***Check the data for errors***
-Data from this set goes back to May of 2020. We will only be looking at the last 12 months of data to analyze. This is an appropriate sample size.
+Data from this set goes back to May of 2020. We will only be looking at the last 12 months of data to analyze. 12 individual files each representing the last 12 months respectively. This is an appropriate sample size.
 
 ### ***Choose your tools***
+The tools that I chose to use during this case study included **MySQL Workbench, Excel, and Tableau.
 
 ### ***Transform the data so you can work with it effectively***
 
