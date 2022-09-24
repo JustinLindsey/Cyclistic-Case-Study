@@ -29,7 +29,7 @@ Data from this set goes back to May of 2020. We will only be looking at the last
 The tools that I chose to use during this case study included **MySQL Workbench, Excel, and Tableau.** SQL for easy analysis and Tableau for visualizations of my findings.
 
 ### ***Transforming and Documenting the Data***
-While importing the dataset into SQL, I noticed that the 'started_at' and 'ended_at' columns were TEXT datatypes instead of DATETIME datatypes, so I converted both of those. I also added a few columns including: started_time (TIME), ended_time (TIME), ride_length (TIME), and day_of_week (INT). See below or [click here]()
+While importing the dataset into SQL, I noticed that the 'started_at' and 'ended_at' columns were TEXT datatypes instead of DATETIME datatypes, so I converted both of those. I also added a few columns including: 'started_time' (TIME), 'ended_time' (TIME), 'ride_length' (TIME), and 'day_of_week' (INT). See below or [click here](https://github.com/JustinLindsey/Cyclistic-Case-Study/blob/main/CLEANcyclistic.sql)
 
 `Data Cleaning`
 
@@ -78,7 +78,7 @@ ADD day_of_week INT;
 UPDATE cyclistic
 SET day_of_week = WEEKDAY(started_at);
 ```
-
+## Analyze;
 
 
 
