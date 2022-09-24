@@ -9,7 +9,7 @@ For this Case Study, I'm a junior data analyst working for a fictional company, 
 How do annual members and casual riders use Cyclistic bikes differently is the question I am tasked with answering in this study. Cyclistic has concluded that annual members are more profitable, so the goal will be to conver those casual riders into annual members!
 
 ### ***Identify Stakeholders***
-Key stakeholders include: Cyclistic executive team, Director of Marketing (Lily Moreno), Marketing Analytics team.
+Key stakeholders include: Cyclistic executive team, Director of Marketing (Lily Moreno), and the Marketing Analytics team.
 
 ## **Prepare**
 ### ***Download data and store it appropriately***
@@ -28,9 +28,12 @@ Data from this set goes back to May of 2020. We will only be looking at the last
 ### ***Choose your tools***
 The tools that I chose to use during this case study included **MySQL Workbench, Excel, and Tableau.** SQL for easy analysis and Tableau for visualizations of my findings.
 
-### ***Transform the data so you can work with it effectively***
+### ***Transforming and Documenting the Data***
+While importing the dataset into SQL, I noticed that the 'started_at' and 'ended_at' columns were TEXT datatypes instead of DATETIME datatypes, so I converted both of those. I also added a few columns including: started_time (TIME), ended_time (TIME), ride_length (TIME), and day_of_week (INT). 
 
-### ***Document the cleaning process***
+`Data Cleaning`
+
+
 
 
 
