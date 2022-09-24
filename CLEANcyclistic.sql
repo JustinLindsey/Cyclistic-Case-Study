@@ -43,6 +43,26 @@ ADD day_of_week INT;
 UPDATE cyclistic
 SET day_of_week = WEEKDAY(started_at);
 
+/* Issues with server being able to run query for this step, but listed nonetheless */
+-- In order to make day_of_week column more descriptive, I want to change the 0,1,2,3,4,5,6 integers, to Monday,Tuesday, etc.alter
+ALTER TABLE cyclistic
+MODIFY day_of_week TEXT;
+
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '0' THEN 'Monday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '1' THEN 'Tuesday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '2' THEN 'Wednesday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '3' THEN 'Thursday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '4' THEN 'Friday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '5' THEN 'Saturday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '6' THEN 'Sunday' END;
+
 
 
 
