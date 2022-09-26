@@ -78,23 +78,33 @@ ADD day_of_week INT;
 UPDATE cyclistic
 SET day_of_week = WEEKDAY(started_at);
 
+-- Changing day_of_week column into a text datatype. It still has numbers 0,1,2 and so on to represent Monday, Tuesday etc.
+
 ALTER TABLE cyclistic
 MODIFY day_of_week TEXT;
 
+-- Updating table so that it is much easier to look at the day_of_week column and decipher what day it actually is.
+
 UPDATE cyclistic
-SET day_of_week = CASE WHEN '0' THEN 'Monday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '1' THEN 'Tuesday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '2' THEN 'Wednesday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '3' THEN 'Thursday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '4' THEN 'Friday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '5' THEN 'Saturday' END;
-UPDATE cyclistic
-SET day_of_week = CASE WHEN '6' THEN 'Sunday' END;
+SET day_of_week = CASE 
+	WHEN day_of_week = '0' THEN 'Monday' 
+	WHEN day_of_week = '1' THEN 'Tuesday'
+	WHEN day_of_week = '2' THEN 'Wednesday'
+	WHEN day_of_week = '3' THEN 'Thursday'
+	WHEN day_of_week = '4' THEN 'Friday'
+	WHEN day_of_week = '5' THEN 'Saturday'
+	WHEN day_of_week = '6' THEN 'Sunday'
+    ELSE day_of_week
+END
+
+
+
+
+
+
+
+
+
 ```
 ## Analyze;
 
