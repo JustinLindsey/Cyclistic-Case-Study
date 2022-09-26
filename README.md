@@ -77,6 +77,24 @@ ADD day_of_week INT;
 
 UPDATE cyclistic
 SET day_of_week = WEEKDAY(started_at);
+
+ALTER TABLE cyclistic
+MODIFY day_of_week TEXT;
+
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '0' THEN 'Monday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '1' THEN 'Tuesday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '2' THEN 'Wednesday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '3' THEN 'Thursday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '4' THEN 'Friday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '5' THEN 'Saturday' END;
+UPDATE cyclistic
+SET day_of_week = CASE WHEN '6' THEN 'Sunday' END;
 ```
 ## Analyze;
 
