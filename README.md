@@ -96,19 +96,128 @@ SET day_of_week = CASE
 	WHEN day_of_week = '6' THEN 'Sunday'
     ELSE day_of_week
 END
+```
+## **Analyze**
+### ***Analysis was done using MySQL Workbench***
+
+First up was doing a simple query to see the percentage of rides taken by each group (casual/member). The numbers showed that casual riders made up **41.96%** of the rides while members made up **58.04%** of rides
+
+```
+WITH cte AS
+(SELECT CAST(COUNT(ride_id) AS FLOAT) AS total_num
+FROM cyclistic)
+SELECT member_casual, 
+CASE
+ 	WHEN member_casual = 'member' THEN ROUND(CAST((COUNT(*) / total_num) * 100 AS float),2)
+	WHEN member_casual = 'casual' THEN ROUND(CAST((COUNT(*) / total_num) * 100 AS float),2)
+END AS percentage_of_total_rides_all_year
+FROM cyclistic, cte
+GROUP BY member_casual, cte.total_num;
+```
+
+Second on the list was checking to see which months were the most active between both groups. As expected, both groups saw a major spike during the spring-summer months and drop during the cooler months. The casual riders took a huge hit once the weather began changing.
+
+```SELECT MONTH(started_at) as month, count(*) as num
+FROM cyclistic
+WHERE member_casual LIKE 'casual'
+GROUP BY MONTH(started_at)
+ORDER BY count(*) desc;
+
+SELECT MONTH(started_at) as month, count(*) as num
+FROM cyclistic
+WHERE member_casual LIKE 'member'
+GROUP BY MONTH(started_at)
+ORDER BY count(*) desc;
+```
+
+Now for checking the average ride duration for each group of riders. Casual riders tended to have longer trips than the members by 2-3 minutes
+
+```
+SELECT member_casual, LEFT(sec_to_time(avg(time_to_sec(ride_length))),8) as avg
+FROM cyclistic
+WHERE month(started_at) IN (5,6,7,8,9)
+GROUP BY member_casual
+```
+
+Next I checked which days were most active amongst each group. The results tells us a lot. The most active days for casual riders was the weekend. Friday through Sunday is where most of the riders came for them and we see a drop off for weekdays. However, we see the opposite for members. The most frequent days are the weekdays while the weekends take a hit for members.
+
+```
+-- Viewing which days are active amongst both casual and member riders
+SELECT member_casual, day_of_week, CASE
+WHEN member_casual = 'member' THEN COUNT(*)
+WHEN member_casual = 'casual' THEN COUNT(*)
+END AS week_day_count
+FROM cyclistic
+GROUP BY member_casual, day_of_week
+ORDER BY member_casual, week_day_count DESC;
+```
+
+Now checked the amount of stations and see which stations are visited the most frequently by the casual riders. There were a total of 1,439 distinct stations. The top **three start and end stations for casuals were**
+
+-Streeter Dr & Grand Ave
+-DuSable Lake Shore Dr & Monroe St
+-Millennium Park
 
 
+**The top three for members were**
 
-
-
-
-
+-Kingsbury St & Kinzie St
+-Clark St & Elm St
+-Wells St & Concord Ln
 
 
 ```
-## Analyze;
+SELECT count(distinct start_station_name), count(start_station_name)
+FROM cyclistic
+WHERE start_station_name IS NOT null
+```
+```
+with cte AS
+(
+SELECT member_casual, start_station_name,
+CASE 
+	WHEN member_casual = 'casual' THEN
+		DENSE_RANK() OVER(PARTITION BY member_casual ORDER BY COUNT(start_station_name) DESC)
+	WHEN member_casual = 'member' THEN
+		DENSE_RANK() OVER(PARTITION BY member_casual ORDER BY COUNT(start_station_name) DESC)
+END AS ranking
+FROM cyclistic
+WHERE start_station_name IS NOT NULL
+GROUP BY start_station_name, member_casual
+ORDER BY member_casual, ranking
+)
+SELECT * FROM cte
+WHERE ranking <= 4 AND start_station_name IS NOT null;
+```
 
+```
+with cte AS
+(
+SELECT member_casual, end_station_name,
+CASE 
+	WHEN member_casual = 'casual' THEN
+		DENSE_RANK() OVER(PARTITION BY member_casual ORDER BY COUNT(end_station_name) DESC)
+	WHEN member_casual = 'member' THEN
+		DENSE_RANK() OVER(PARTITION BY member_casual ORDER BY COUNT(end_station_name) DESC)
+END AS ranking
+FROM cyclistic
+WHERE end_station_name IS NOT NULL
+GROUP BY end_station_name, member_casual
+ORDER BY member_casual, ranking
+)
+SELECT * FROM cte
+WHERE ranking <= 4 AND end_station_name IS NOT null;
+```
+The last form of analysis will be looking at the different types of bikes and the frequency at which they were used throughout the year. For the most part classic and electric were used during the busiest parts of the year, Spring-Summer. Docked bikes become more prevalent in the winter months
 
+```
+SELECT rideable_type, member_casual, EXTRACT(QUARTER FROM started_at) AS quarter, COUNT(*) AS total_rides
+FROM cyclistic
+GROUP BY quarter, rideable_type, member_casual
+ORDER BY total_rides desc;
+```
 
+## **SHARE**
+### ***The software used for visualizatizing my analysis was Tableau***
 
 
