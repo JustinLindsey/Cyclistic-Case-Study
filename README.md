@@ -218,6 +218,7 @@ ORDER BY total_rides desc;
 ```
 
 ## **SHARE**
-### ***The software used for visualizatizing my analysis was Tableau***
+### ***The software used for visualizatizing my analysis was Tableau Public***
+
 
 
