@@ -155,14 +155,18 @@ ORDER BY member_casual, week_day_count DESC;
 Now checked the amount of stations and see which stations are visited the most frequently by the casual riders. There were a total of 1,439 distinct stations. The top **three start and end stations for casuals were**
 
 -Streeter Dr & Grand Ave
+
 -DuSable Lake Shore Dr & Monroe St
+
 -Millennium Park
 
 
 **The top three for members were**
 
 -Kingsbury St & Kinzie St
+
 -Clark St & Elm St
+
 -Wells St & Concord Ln
 
 
