@@ -1,5 +1,6 @@
 # Cyclistic: How Does a Bike-Share Navigate Speedy Success?
 #### ***[Data Source](https://divvy-tripdata.s3.amazonaws.com/index.html)***
+#### **10-15 minute read**
 
 ## **Introduction**
 For this Case Study, I'm a junior data analyst working for a fictional company, **Cyclistic**. I will follow the basic steps for a data analyst process: **ask, prepare, process, analyze, share, act.** The director believes that the success of the company depends on maximizing the number of annual memberships. Three questions guide the marketing program. How do annual members and casual riders use Cyclistic bikes differently? Why would casual riders buy Cyclistic annual memberships? How can Cyclistic use digital media to influence casual riders to become members? My job will be to answer the first question!
@@ -221,8 +222,38 @@ GROUP BY quarter, rideable_type, member_casual
 ORDER BY total_rides desc;
 ```
 
-## **SHARE**
+## **Share**
 ### ***The software used for visualizatizing my analysis was Tableau Public***
+Link to the full [Dashboard](https://public.tableau.com/app/profile/justin.lindsey/viz/CyclisticAnalysis_16643791706850/Dashboard1) 
 
+![Screen Shot 2022-09-28 at 11 20 43 AM](https://user-images.githubusercontent.com/99827985/192833350-94d60dc7-fb53-4a28-ad5e-ebbabba47d03.png)
 
+We can see a spike in rides for all riders during the summer months and a dip once the fall and winter seasons come around
 
+![Screen Shot 2022-09-28 at 11 26 14 AM](https://user-images.githubusercontent.com/99827985/192834477-c5458087-fd7e-48c9-b895-90dd201237bb.png)
+
+The busiest days for casual riders are saturday and sunday, the weekend gets a huge influx of casual riders. The weekdays are where the members do most of their riding.
+
+![Screen Shot 2022-09-28 at 11 28 32 AM](https://user-images.githubusercontent.com/99827985/192835096-d5be920e-6dde-4faf-8709-0c8ac5381d75.png)
+
+The stations where riders start and end seem to be very consistent in terms of popularity.
+
+![Screen Shot 2022-09-28 at 11 30 02 AM](https://user-images.githubusercontent.com/99827985/192835679-090b286a-1298-4aa6-ad50-0e4ce4fa0ade.png)
+
+Classic and Electric bikes are much more popular than the docked bikes especially during peak season.
+
+## **Act**
+Reminder: The goal is to convert casual riders into members
+### ***Recommendations***
+
+1. From the analysis it seems that marketing should start in May and run through September. Quarter's 2 and 3 is the most active in terms of riders.
+
+2. Saturday and Sunday should be prioritised when it comes to scheduling ads for any campaigns ran.
+
+3. I recommend running more marketing campaigns targeting certain bike stations. Primarily 'Streeter Dr. and Grand Ave','Dusable Lake Shore Dr.', and 'Millennium Park' locations seeing as they are the most frequented bike stations.
+
+4. Taking a look at the different bike types, we should look towards pushing classic and electric bikes rather than docked ones. Maybe certain promotions can be ran to encourage their use.
+
+Thank you very much for your time.
+
+If you have any questions feel free to email me: justinmarquis.lindsey@gmail.com
