@@ -243,14 +243,14 @@ Classic and Electric bikes are much more popular than the docked bikes especiall
 Reminder: The goal is to convert casual riders into members
 ### ***Recommendations***
 
-1. From the analysis it seems that marketing should start in May and run through September. Quarter's 2 and 3 is the most active in terms of riders.
+* From the analysis it seems that marketing should start in May and run through September. Quarter's 2 and 3 is the most active in terms of riders.
 
-2. Saturday and Sunday should be prioritised when it comes to scheduling ads for any campaigns ran.
+* Saturday and Sunday should be prioritised when it comes to scheduling ads for any campaigns ran.
 
-3. I recommend running more marketing campaigns targeting certain bike stations. Primarily 'Streeter Dr. and Grand Ave','Dusable Lake Shore Dr.', and 'Millennium Park' locations seeing as they are the most frequented bike stations.
+* I recommend running more marketing campaigns targeting certain bike stations. Primarily 'Streeter Dr. and Grand Ave','Dusable Lake Shore Dr.', and 'Millennium Park' locations seeing as they are the most frequented bike stations.
 
-4. Taking a look at the different bike types, we should look towards pushing classic and electric bikes rather than docked ones. Maybe certain promotions can be ran to encourage their use.
+* Taking a look at the different bike types, we should look towards pushing classic and electric bikes rather than docked ones. Maybe certain promotions can be ran to encourage their use.
 
-Thank you very much for your time.
-
-If you have any questions feel free to email me: justinmarquis.lindsey@gmail.com
+Thank you for your time.
+* Email: justinmarquis.lindsey@gmail.com
+* LinkedIn: [Justin Lindsey](https://www.linkedin.com/in/justinmlindsey/)
